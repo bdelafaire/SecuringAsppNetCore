@@ -29,10 +29,16 @@ namespace Batdelaf.IDP
                     ClientName = "Image Gallery",
                     ClientId = "imagegalleryclient",
                     AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireConsent = true,
                     RedirectUris = new List<string>()
                     {
                         "https://localhost:44389/signin-oidc"
                     },
+                    PostLogoutRedirectUris = new List<string>()
+                        {
+                            "https://localhost:44389/signout-callback-oidc"
+                        },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
